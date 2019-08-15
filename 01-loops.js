@@ -125,8 +125,18 @@ let mix = [5, 'David', {name:'Ella'}, 23, 'Frank']
 // console.log(sortArrayDescending(numbers))
 
 //20116
-let sortedNamesLength = (arr) => {
-	return arr.sort((a,b) => a.name.length > b.name.length )
+// let sortedNamesLength = (arr) => {
+// 	return arr.sort((a,b) => a.name.length > b.name.length )
+// }
+//
+// console.log(sortedNamesLength(students))
+
+//20118
+let combineTwoArrays = (arr1, arr2) => {
+	for( var i=0; i<arr1.length && i<arr2.length; i++) {
+			arr2[i].age = arr1[i]
+	}
+	return arr2
 }
 
-console.log(sortedNamesLength(students))
+console.log(combineTwoArrays(numbers,students))
