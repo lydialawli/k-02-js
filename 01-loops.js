@@ -163,7 +163,17 @@ let detectMissingNum = (a) => {
 
 //20120
 let denom = [10, 5, 1, 0.5, 0.2, 0.1, 0.05, 0.01]
+let newArray = []
+let count = 0
 
+let giveChange = (a, n) => {
+	for(var i=0; i<a.length; i++) {
+		while(n>count+a[i]){
+			count += a[i]
+			newArray.push(a[i])
+		}
+	}
+	return newArray
+}
 
-
-console.log(change(denom, 27.58))
+console.log(giveChange(denom, 27.58))
