@@ -81,9 +81,20 @@ let mix = [5, 'David', {name:'Ella'}, 23, 'Frank']
 // console.log(findStudent(students, 'Bob'))
 
 //20111
-// let summit = (a) => {
+// let sum = (a) => {
 // 	a.reduce( (t,n) => {
-// 		return t + n
+// 		return t - n
 // 	})
 // }
-// console.log( summit(numbers) )
+// console.log(sum(numbers))
+
+//20112
+let sumAll= (a) => {
+	let x = 0
+	for(var i=0; i<a.length; i++){
+		x += a[i]
+	}
+	return x
+}
+
+console.log(sumAll(numbers))
