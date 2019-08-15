@@ -50,8 +50,18 @@ let mix = [5, 'David', {name:'Ella'}, 23, 'Frank']
 // console.log(greaterThan22(numbers, 70))
 
 //20107
-let student6letters = (a) => {
-	return a.filter(s => { return s.name.length > 6})
+// let student6letters = (a) => {
+// 	return a.filter(s => { return s.name.length > 6})
+// }
+//
+// console.log(student6letters(students))
+
+//20108
+let returnArrayOfStrings = (a) => {
+	return a.filter(m => {
+		if(typeof m == "string")
+			return m
+	})
 }
 
-console.log(student6letters(students))
+console.log(returnArrayOfStrings(mix))
