@@ -29,8 +29,15 @@ let mix = [5, 'David', {name:'Ella'}, 23, 'Frank']
 // console.log(add1ToArrayElements(numbers))
 
 //20104
-let getNames = (a) => {
-	return a.map(s => s.name)
+// let getNames = (a) => {
+// 	return a.map(s => s.name)
+// }
+//
+// console.log(getNames(students))
+
+//20105
+let greaterThan22 = (a) => {
+	return a.filter(n => { return n >=22})
 }
 
-console.log(getNames(students))
+console.log(greaterThan22(numbers))
