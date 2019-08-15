@@ -67,8 +67,15 @@ let mix = [5, 'David', {name:'Ella'}, 23, 'Frank']
 // console.log(returnArrayOfStrings(mix))
 
 //20109
-let firstGreaterThan100 = (a) => {
-	return a.find(n => { return n>100})
+// let firstGreaterThan100 = (a) => {
+// 	return a.find(n => { return n>100})
+// }
+//
+// console.log(firstGreaterThan100(numbers))
+
+//20110
+let findStudent = (a, name) => {
+	return a.find(s => { return s.name == name})
 }
 
-console.log(firstGreaterThan100(numbers))
+console.log(findStudent(students, 'Bob'))
