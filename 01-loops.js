@@ -36,8 +36,15 @@ let mix = [5, 'David', {name:'Ella'}, 23, 'Frank']
 // console.log(getNames(students))
 
 //20105
-let greaterThan22 = (a) => {
-	return a.filter(n => { return n >=22})
+// let greaterThan22 = (a) => {
+// 	return a.filter(n => { return n >=22})
+// }
+//
+// console.log(greaterThan22(numbers))
+
+//20106
+let greaterThan22 = (a, givenNum) => {
+	return a.filter(n => { return n > givenNum})
 }
 
-console.log(greaterThan22(numbers))
+console.log(greaterThan22(numbers, 70))
