@@ -20,10 +20,17 @@ let mix = [5, 'David', {name:'Ella'}, 23, 'Frank']
 //
 // logStudents(students)
 
-//20103'
+//20103
 
-let add1ToArrayElements = (a) =>{
-	return a.map(n => n + 1)
+// let add1ToArrayElements = (a) =>{
+// 	return a.map(n => n + 1)
+// }
+//
+// console.log(add1ToArrayElements(numbers))
+
+//20104
+let getNames = (a) => {
+	return a.map(s => s.name)
 }
 
-console.log(add1ToArrayElements(numbers))
+console.log(getNames(students))
