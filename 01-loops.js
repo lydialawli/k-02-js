@@ -118,8 +118,15 @@ let mix = [5, 'David', {name:'Ella'}, 23, 'Frank']
 // console.log(findProduct(numbers))
 
 //20115
-let sortArrayDescending = (arr) => {
-	return arr.sort((a,b) => a - b ).reverse()
+// let sortArrayDescending = (arr) => {
+// 	return arr.sort((a,b) => a - b ).reverse()
+// }
+//
+// console.log(sortArrayDescending(numbers))
+
+//20116
+let sortedNamesLength = (arr) => {
+	return arr.sort((a,b) => a.name.length > b.name.length )
 }
 
-console.log(sortArrayDescending(numbers))
+console.log(sortedNamesLength(students))
