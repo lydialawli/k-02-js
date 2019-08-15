@@ -74,8 +74,16 @@ let mix = [5, 'David', {name:'Ella'}, 23, 'Frank']
 // console.log(firstGreaterThan100(numbers))
 
 //20110
-let findStudent = (a, name) => {
-	return a.find(s => { return s.name == name})
-}
+// let findStudent = (a, name) => {
+// 	return a.find(s => { return s.name == name})
+// }
+//
+// console.log(findStudent(students, 'Bob'))
 
-console.log(findStudent(students, 'Bob'))
+//20111
+// let summit = (a) => {
+// 	a.reduce( (t,n) => {
+// 		return t + n
+// 	})
+// }
+// console.log( summit(numbers) )
