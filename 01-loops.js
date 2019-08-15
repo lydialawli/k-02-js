@@ -89,12 +89,37 @@ let mix = [5, 'David', {name:'Ella'}, 23, 'Frank']
 // console.log(sum(numbers))
 
 //20112
-let sumAll= (a) => {
-	let x = 0
-	for(var i=0; i<a.length; i++){
-		x += a[i]
-	}
-	return x
+// let sumAll= (a) => {
+// 	let x = 0
+// 	for(var i=0; i<a.length; i++){
+// 		x += a[i]
+// 	}
+// 	return x
+// }
+//
+// console.log(sumAll(numbers))
+
+//20113
+
+// let differences = (a) => {
+// 	a.reduce( (t,n) => {
+// 		(t + n) /2
+// 	})
+// }
+// console.log(differences(numbers))
+
+//20114
+// let findProduct = (a) => {
+// 	a.reduce( (t,i) => {
+// 		return t * i
+// 	})
+// }
+//
+// console.log(findProduct(numbers))
+
+//20115
+let sortArrayDescending = (arr) => {
+	return arr.sort((a,b) => a - b ).reverse()
 }
 
-console.log(sumAll(numbers))
+console.log(sortArrayDescending(numbers))
