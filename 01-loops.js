@@ -132,11 +132,23 @@ let mix = [5, 'David', {name:'Ella'}, 23, 'Frank']
 // console.log(sortedNamesLength(students))
 
 //20118
-let combineTwoArrays = (arr1, arr2) => {
-	for( var i=0; i<arr1.length && i<arr2.length; i++) {
-			arr2[i].age = arr1[i]
-	}
-	return arr2
-}
+// let combineTwoArrays = (arr1, arr2) => {
+// 	for( var i=0; i<arr1.length && i<arr2.length; i++) {
+// 			arr2[i].age = arr1[i]
+// 	}
+// 	return arr2
+// }
+//
+// console.log(combineTwoArrays(numbers,students))
 
-console.log(combineTwoArrays(numbers,students))
+//20119
+let missing6 = [1, 2, 3, 4, 5, 7, 8, 9, 10]
+let missingNum = 0
+
+let detectMissingNum = (a) => {
+	for(var i=0; i<a.length; i++) {
+ 		if(a[i]!= i+1)
+			return missingNum = i+1
+ 	}
+}
+ console.log(detectMissingNum(missing6))
