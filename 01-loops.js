@@ -43,8 +43,15 @@ let mix = [5, 'David', {name:'Ella'}, 23, 'Frank']
 // console.log(greaterThan22(numbers))
 
 //20106
-let greaterThan22 = (a, givenNum) => {
-	return a.filter(n => { return n > givenNum})
+// let greaterThan22 = (a, givenNum) => {
+// 	return a.filter(n => { return n > givenNum})
+// }
+//
+// console.log(greaterThan22(numbers, 70))
+
+//20107
+let student6letters = (a) => {
+	return a.filter(s => { return s.name.length > 6})
 }
 
-console.log(greaterThan22(numbers, 70))
+console.log(student6letters(students))
