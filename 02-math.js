@@ -8,7 +8,7 @@ let roundNum = (n) => {
 	return Math.round(n)
 }
 
-//console.log(round(15.9))
+//console.log(roundNum(1232.58))
 
 //20202
 let roundPrices = (p) => {
@@ -20,4 +20,12 @@ let roundPrices = (p) => {
 	})
 }
 
-console.log(roundPrices(products))
+//console.log(roundPrices(products))
+
+//20203
+let roundNumWthGivenDecimals = (n, d) => {
+	let decimals = Math.pow(10,d)
+	return Math.round(n * decimals)/decimals
+}
+
+console.log(roundNumWthGivenDecimals(1324.5436 , 3))
