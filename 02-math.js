@@ -42,4 +42,11 @@ let power = (n , p) => {
 	return Math.pow(n,p)
 }
 
-console.log(power(4,4))
+//console.log(power(4,4))
+
+//20205
+let randomize = (min, max) => {
+	return Math.random()*(max-min) + min
+}
+
+console.log(randomize(1,10))
