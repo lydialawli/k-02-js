@@ -28,16 +28,18 @@ let roundNumWthGivenDecimals = (n, d) => {
 	return Math.round(n * decimals)/decimals
 }
 
-console.log(roundNumWthGivenDecimals(1324.5436 , 3))
+//console.log(roundNumWthGivenDecimals(1324.5436 , 3))
 
 //20203 another way
 let roundingToXdecimals = (n ,d) => {
 	return Number(n.toFixed(d))
 }
 
-console.log(roundingToXdecimals(1324.5436 , 3))
+//console.log(roundingToXdecimals(1324.5436 , 3))
 
 //20204
 let power = (n , p) => {
-
+	return Math.pow(n,p)
 }
+
+console.log(power(4,4))
