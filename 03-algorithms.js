@@ -45,11 +45,25 @@ let intoRomanNum = (a, givenNum) => {
 	return finalRomanNum
 }
 
-console.log(
-	//intoRomanNum(numbers,27), //XXVII
-	//intoRomanNum(numbers,154),//CLIV
-	//intoRomanNum(numbers,482),//CDLXXXII
-	// intoRomanNum(numbers,340),//CCCXL
-	// intoRomanNum(numbers,938),//CMXXXVIII
-	intoRomanNum(numbers,4562),//MMMMDLXII
-)
+// console.log(intoRomanNum(numbers,27))//XXVII
+// console.log(intoRomanNum(numbers,154))//CLIV
+// console.log(intoRomanNum(numbers,482))//CDLXXXII
+// console.log(intoRomanNum(numbers,340))//CMXXXVIII
+// console.log(intoRomanNum(numbers,4562))//MMMMDLXII
+
+//20305
+
+let logFizzbuzz = () => {
+	for(var i=0; i<=20; i++){
+		if(i % 3 == 0 && i % 5==0)
+			console.log("fizzbuzz")
+		else if(i % 3 == 0)
+			console.log("fizz")
+		else if(i % 5 == 0)
+			console.log("buzz")
+		else
+			console.log(i)
+	}
+}
+
+console.log(logFizzbuzz())
