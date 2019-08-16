@@ -11,11 +11,11 @@ console.log(name+ ' ' +surname)
 
 or
 
-`console.log(name.concat(surname))`
+` console.log(name.concat(surname))`
 
 or
 
-``console.log(`${name} ${surname}`)``
+`` console.log(`${name} ${surname}`) ``
 
 
 ## how to keep " ' " a character
@@ -104,7 +104,7 @@ console.log(price.toFixed(2)) //100.69
 ## string
 converts into string
 
-`console.log(String(price))`
+` console.log(String(price)) `
 
 ## number
 converts into number
@@ -200,6 +200,32 @@ if (a==1){
 ```
 same as
 
-`a == 1 ? 'a' : 'b'  `
+` a == 1 ? 'a' : 'b'  `
 
 if 1 is true, do 'a', otherwise do 'b'
+
+## Math
+- power of
+` Math.pow(2,3) `
+//8
+
+- square root
+` Math.sqrt(9) `
+//3
+
+- random
+` Math.random().10 `
+random number from 0 to 10
+ex. 1, 2, 0.615...
+
+
+## Time
+
+**setTimout(function,time(in ms))**
+
+```
+let add = (a, b) => a + b
+
+setTimeout(add(),3000)
+```
+ex.setting alarm clock...
