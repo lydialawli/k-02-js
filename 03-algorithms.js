@@ -23,6 +23,19 @@ let listOfCurrencyPlusValue = (a) => {
 
 //console.log(JSON.stringify(listOfCurrencyPlusValue(prices),null,2))
 
+//20303
+let palindromes = []
+let getPalidromes = (a) => {
+	a.forEach( w => {
+		let flip = w.split('').reverse().join('')
+		if(w == flip)
+			palindromes.push(w)
+	})
+	return palindromes
+}
+
+console.log(getPalidromes(names))
+
 //20304
 
 let numbers = [
@@ -76,4 +89,4 @@ let b = (a, b, c, d) => {
 	return a(b,c) - d
 }
 
-console.log(b(a , 10, 3, 4))
+//console.log(b(a , 10, 3, 4))
