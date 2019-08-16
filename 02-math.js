@@ -15,7 +15,7 @@ let roundPrices = (p) => {
 	return p.map( i => {
 		return {
 			name: i.name,
-			age: roundNum(i.price)
+			price: roundNum(i.price)
 		}
 	})
 }

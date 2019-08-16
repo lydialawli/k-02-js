@@ -21,4 +21,35 @@ let listOfCurrencyPlusValue = (a) => {
 	})
 }
 
-console.log(JSON.stringify(listOfCurrencyPlusValue(prices),null,2))
+//console.log(JSON.stringify(listOfCurrencyPlusValue(prices),null,2))
+
+//20304
+
+let numbers = [
+	{arabic:1000, roman: "M"}, 	{arabic:900, roman: "CM"}, {arabic:800, roman: "DCCC"}, {arabic:700, roman: "DCC"}, {arabic:600, roman: "DC"}, {arabic:500, roman: "D"},
+	{arabic:400, roman: "CD"}, {arabic:100, roman: "C"}, {arabic:90, roman: "XC"}, {arabic:80, roman: "LXXX"}, {arabic:70, roman: "LXX"}, {arabic:60, roman: "LX"},
+	{arabic:50, roman: "L"}, {arabic:40, roman: "XL"}, {arabic:10, roman: "X"}, {arabic:9, roman: "IX"},{arabic:8, roman: "VIII"},{arabic:7, roman: "VII"},{arabic:6, roman: "VI"},
+	{arabic:5, roman: "V"}, {arabic:4, roman: "IV"}, {arabic:1, roman: "I"},
+]
+let newArray = []
+let count = 0
+let finalRomanNum = ""
+
+let intoRomanNum = (a, givenNum) => {
+	for(var i=0; i< a.length; i++) {
+		while( givenNum > count + a[i].arabic){
+			count += a[i].arabic
+			finalRomanNum += a[i].roman
+		}
+	}
+	return finalRomanNum
+
+}
+
+console.log(
+	intoRomanNum(numbers,27), //XXVII
+	// intoRomanNum(numbers,154),//CLIV
+	// intoRomanNum(numbers,340),//CCCXL
+	// intoRomanNum(numbers,938),//CMXXXVIII
+	// intoRomanNum(numbers,4562),//MMMMDLXII
+)
