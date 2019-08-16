@@ -37,19 +37,19 @@ let finalRomanNum = ""
 
 let intoRomanNum = (a, givenNum) => {
 	for(var i=0; i< a.length; i++) {
-		while( givenNum > count + a[i].arabic){
+		while( givenNum >= count + a[i].arabic){
 			count += a[i].arabic
 			finalRomanNum += a[i].roman
 		}
 	}
 	return finalRomanNum
-
 }
 
 console.log(
-	intoRomanNum(numbers,27), //XXVII
-	// intoRomanNum(numbers,154),//CLIV
+	//intoRomanNum(numbers,27), //XXVII
+	//intoRomanNum(numbers,154),//CLIV
+	//intoRomanNum(numbers,482),//CDLXXXII
 	// intoRomanNum(numbers,340),//CCCXL
 	// intoRomanNum(numbers,938),//CMXXXVIII
-	// intoRomanNum(numbers,4562),//MMMMDLXII
+	intoRomanNum(numbers,4562),//MMMMDLXII
 )
