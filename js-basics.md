@@ -111,7 +111,7 @@ converts into number
 
 ```
 let price = '100'
-console.log(number(price))
+console.log(Number(price))
 //100
 ```
 

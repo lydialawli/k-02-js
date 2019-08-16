@@ -29,3 +29,15 @@ let roundNumWthGivenDecimals = (n, d) => {
 }
 
 console.log(roundNumWthGivenDecimals(1324.5436 , 3))
+
+//20203 another way
+let roundingToXdecimals = (n ,d) => {
+	return Number(n.toFixed(d))
+}
+
+console.log(roundingToXdecimals(1324.5436 , 3))
+
+//20204
+let power = (n , p) => {
+
+}
