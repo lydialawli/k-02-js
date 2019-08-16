@@ -9,4 +9,16 @@ let flipString = (s) => {
 	}).join(' ')
 }
 
-console.log(flipString(phrase))
+//console.log(flipString(phrase))
+
+//20302
+let listOfCurrencyPlusValue = (a) => {
+	return a.map( string => {
+		return {
+			currency: string.substring(0,1),
+			value: Number(string.slice(1))
+		}
+	})
+}
+
+console.log(JSON.stringify(listOfCurrencyPlusValue(prices),null,2))
