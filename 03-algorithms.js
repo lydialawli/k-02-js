@@ -34,7 +34,7 @@ let getPalidromes = (a) => {
 	return palindromes
 }
 
-console.log(getPalidromes(names))
+//console.log(getPalidromes(names))
 
 //20304
 
@@ -89,4 +89,4 @@ let b = (a, b, c, d) => {
 	return a(b,c) - d
 }
 
-//console.log(b(a , 10, 3, 4))
+console.log(b(a , 10, 3, 4))
