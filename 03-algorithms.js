@@ -66,4 +66,14 @@ let logFizzbuzz = () => {
 	}
 }
 
-console.log(logFizzbuzz())
+//console.log(logFizzbuzz())
+
+//20306
+
+let a = (a,b) => {return a + b}
+
+let b = (a, b, c, d) => {
+	return a(b,c) - d
+}
+
+console.log(b(a , 10, 3, 4))
