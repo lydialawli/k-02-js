@@ -222,10 +222,16 @@ ex. 1, 2, 0.615...
 ## Time
 
 **setTimout(function,time(in ms))**
-
+ex.setting alarm clock...
 ```
 let add = (a, b) => a + b
 
 setTimeout(add(),3000)
 ```
-ex.setting alarm clock...
+
+```
+setTimeout(() => { console.log('Hello')}, 2 * 60 * 1000)
+```
+//will log "Hello" after 2 seconds
+
+**setInterval()
