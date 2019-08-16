@@ -49,4 +49,11 @@ let randomize = (min, max) => {
 	return Math.random()*(max-min) + min
 }
 
-console.log(randomize(1,10))
+//console.log(randomize(1,10))
+
+//20206
+let randomizeMaxOfX = (x) => {
+	return randomize(1,x)
+}
+
+console.log(randomizeMaxOfX(20))
