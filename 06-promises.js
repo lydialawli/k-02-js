@@ -25,15 +25,44 @@ let haveShower =  () => {
 }
 
 
-getUp().then(res => {
-	console.log(res)
-	haveShower().then(res =>{
-			console.log(res)
-			haveBreakfast().then(res=>{
-				console.log(res)
-				brushTeeth().then(res=>{
-					console.log(res)})
-						.catch(e =>console.log(e))
-				}).catch(e =>console.log(e))
-			}).catch(e =>console.log(e))
-	}).catch(e =>console.log(e))
+// getUp().then(res => {
+// 	console.log(res)
+// 	haveShower().then(res =>{
+// 			console.log(res)
+// 			haveBreakfast().then(res=>{
+// 				console.log(res)
+// 				brushTeeth().then(res=>{
+// 					console.log(res)})
+// 						.catch(e =>console.log(e))
+// 				}).catch(e =>console.log(e))
+// 			}).catch(e =>console.log(e))
+// 	}).catch(e =>console.log(e))
+
+//020602
+let makeCoffee = () => {
+	return new Promise((res, rej) => {
+		setTimeout(() => {res('coffee')}, 10000)
+	})
+}
+
+let makeEggs = () => {
+	return new Promise((res, rej) => {
+		setTimeout(() => {res('eggs')}, 5000)
+	})
+}
+
+let makeToast = () => {
+	return new Promise((res, rej) => {
+		setTimeout(() => {res('toast')}, 6000)
+	})
+}
+
+let makeBacon = () => {
+	return new Promise((res, rej) => {
+		setTimeout(() => {res('bacon')}, 8000)
+	})
+}
+
+Promise.all([makeCoffee(), makeEggs(),makeToast(), makeBacon()])
+.then(res => console.log('Breakfast is ready: ',res))
+.catch(err => console.log(err))

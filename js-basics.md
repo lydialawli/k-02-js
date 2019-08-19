@@ -363,28 +363,6 @@ new Promise((res, rej) => {
 
 ### Nesting
 ```javascript
-fryEggs().then(res => {
-		eatEggs().then(res =>{
-			brushTeeth().then(res =>{
-				//do whatever
-				}).catch(e =>console.log(e))
-			}).catch(e =>console.log(e))
-	}).catch(e =>console.log(e))
-```
-
-### Promise.all()
-Use it when everything is ready.
-Syntax is:
-```javascript
-let a = new Promise //...
-let b = new Promise //...
-
-Promise.all([a, b]).then(responses => /*...*/).catch(/*...*/)
-```
-- takes an **array of promises** as a parameter
-- returns all the promises at the same time as a new **array of results**
-
-```javascript
 
 let cookBacon = (pan, time) => {
 	return new Promise((resolve, reject) => {
@@ -406,7 +384,6 @@ let makeCoffee = (time) => {
 	})
 }
 
-
 // Waits for bacon to be ready to start the coffee
 cookBacon('pan', 4).then(res => {
 	console.log(res)
@@ -414,13 +391,24 @@ cookBacon('pan', 4).then(res => {
 	.then(res => console.log(res))
 })
 .catch(err => console.log(err))
+```
+
+### Promise.all()
+Use it when everything is ready.
+Syntax is:
+```javascript
+let a = new Promise //...
+let b = new Promise //...
+
+Promise.all([a, b]).then(responses => /*...*/).catch(/*...*/)
+```
+- takes an **array of promises** as a parameter
+- returns all the promises at the same time as a new **array of results**
+
+```JavaScript
 
 //Returns the result when everything is ready
 Promise.all([cookBacon('pan', 4), makeCoffee(2)])
-.then(res => console.log(res))
-
-//Returns the result of the first one to be ready
-Promise.race([cookBacon('pan', 4), makeCoffee(2)])
 .then(res => console.log(res))
 
 
@@ -433,3 +421,9 @@ cookBacon( pan, 4 )
 ### Promise.race()
 Similar to promise.all but instead of waiting all the promises to execute, it returns the answer of the first promise that finishes first.
 The rest stops executing.
+
+```javascript
+//Returns the result of the first one to be ready
+Promise.race([cookBacon('pan', 4), makeCoffee(2)])
+.then(res => console.log(res))
+```
