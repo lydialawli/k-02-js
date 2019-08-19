@@ -385,17 +385,44 @@ Promise.all([a, b]).then(responses => /*...*/).catch(/*...*/)
 - returns all the promises at the same time as a new **array of results**
 
 ```javascript
-let cookBacon = (pan, num) => {
-	return new Promise((resolve,reject) => {
-			if (pan) {
-				setTimeout( () => {
-					resolve('Bacon is ready!')
-					}, num*1000)
-			} else{
-					reject('Please provide pan')
-				}
+
+let cookBacon = (pan, time) => {
+	return new Promise((resolve, reject) => {
+		if (pan) {
+			setTimeout(() => {
+				resolve('Bacon is ready!')
+			}, time * 1000)
+		} else {
+			reject('Please provide pan')
+		}
 	})
 }
+
+let makeCoffee = (time) => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve('Coffee is ready!')
+		}, time * 1000)
+	})
+}
+
+
+// Waits for bacon to be ready to start the coffee
+cookBacon('pan', 4).then(res => {
+	console.log(res)
+	makeCoffee(2)
+	.then(res => console.log(res))
+})
+.catch(err => console.log(err))
+
+//Returns the result when everything is ready
+Promise.all([cookBacon('pan', 4), makeCoffee(2)])
+.then(res => console.log(res))
+
+//Returns the result of the first one to be ready
+Promise.race([cookBacon('pan', 4), makeCoffee(2)])
+.then(res => console.log(res))
+
 
 cookBacon( pan, 4 )
 .then(res => console.log(res))

@@ -1,23 +1,39 @@
 //020601
 
-
-let getUp = (x) => {
+let brushTeeth =  () => {
 	return new Promise((res, rej) => {
-		setTimeout(() => resolve(console.log('awake')), 1000)
-		rej('error')
+		setTimeout(() => {res('ready')},1000)
 	})
 }
 
-let haveShower =  (x) => {
+let getUp = () => {
 	return new Promise((res, rej) => {
-		setTimeout(() => resolve(console.log('showered')), 2000)
-		rej('error')
+		setTimeout(() => {res('awake')}, 1000)
 	})
 }
 
+let haveBreakfast =  () => {
+	return new Promise((res, rej) => {
+		setTimeout(() => {res('eaten')}, 2000)
+	})
+}
+
+let haveShower =  () => {
+	return new Promise((res, rej) => {
+		setTimeout(() => {res('showered')}, 2000)
+	})
+}
 
 
 getUp().then(res => {
-		haveShower().then(res =>{
+	console.log(res)
+	haveShower().then(res =>{
+			console.log(res)
+			haveBreakfast().then(res=>{
+				console.log(res)
+				brushTeeth().then(res=>{
+					console.log(res)})
+						.catch(e =>console.log(e))
+				}).catch(e =>console.log(e))
 			}).catch(e =>console.log(e))
 	}).catch(e =>console.log(e))
