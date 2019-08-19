@@ -162,13 +162,21 @@ console.log(fruits.reverse())
 ```
 
 ## while
+
 ```
 let a =1
 while (a>3){
 	console.log('Hello)
-	a ++
-}
+	a ++}
 //Hello, Hello, Hello
+```
+
+## do while
+```JavaScript
+var text =''
+var i = 0
+do(blabla)
+while (something is true)
 ```
 
 ## for in loop
@@ -292,9 +300,10 @@ class Bus extends Car {
 		this.seats = seats
 	}
 }
+
+myBus = new Bus('Toyota', 10)
 ```
 
-`myBus = new Bus('Toyota', 10)`
 
 - **super** is shortcut to not repeat the properties of a parent class .
 ie. if the parent class has 4 wheels, instead of repeating in the new class `this.brand=brand, this.wheels = 4...` those properties that are

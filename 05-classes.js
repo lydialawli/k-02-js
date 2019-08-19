@@ -97,9 +97,13 @@ let Receipt = class {
 		this.Total = total
 	}
 	logNicely(products){
-		return products.Receipt.map( e => {
-				return `|${e.name}  |  $${e.price.toFixed(2)}|`
+		let prod = products.Receipt.map( e => {
+			return `| ${e.name	} ${' '} ${'| '} $${e.price.toFixed(2)} |`
 		})
+		 prod.push('--------------------')
+		 prod.unshift('--------------------')
+
+		 return prod
 	}
 }
 
