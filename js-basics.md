@@ -374,7 +374,7 @@ Promise.all([a, b]).then(responses => /*...*/).catch(/*...*/)
 - returns all the promises at the same time as a new **array of results**
 
 ```
-let cookBacon = (pan, nume) => {
+let cookBacon = (pan, num) => {
 	return new Promise((resolve,reject) => {
 			if (pan) {
 				setTimeout( () => {
