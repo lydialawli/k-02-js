@@ -98,14 +98,29 @@ let Receipt = class {
 	}
 	logNicely(products){
 		let prod = products.Receipt.map( e => {
-			return `| ${e.name	} ${' '} ${'| '} $${e.price.toFixed(2)} |`
+			switch (e.name.length){
+				case 5:
+					return `| ${e.name	} ${' '} ${' | '} $${e.price.toFixed(2)} |`
+					break
+				case 6:
+					return `| ${e.name	} ${' '} ${'| '} $${e.price.toFixed(2)} |`
+					break
+				case 7:
+					return `| ${e.name	} ${''} ${'| '} $${e.price.toFixed(2)} |`
+					break
+				case 8:
+					return `| ${e.name	} ${'| '} $${e.price.toFixed(2)} |`
+			}
 		})
-		 prod.push('--------------------')
-		 prod.unshift('--------------------')
+		 prod.push('----------------------')
+		 prod.unshift('----------------------')
+		 prod.push(`| Total   ${' |'} $${products.Total.toFixed(2)} |`)
 
 		 return prod
 	}
 }
+
+
 
 let getReceipt = (n, p, d) =>{
 		return n.map( (e,i) => {
