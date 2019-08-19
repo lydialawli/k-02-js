@@ -118,7 +118,7 @@ let Receipt = class {
 		 prod.push('----------------------')
 
 		 let receipt = JSON.stringify(prod, null, 2)
-		 return receipt.replace(/"/g,'').replace(/,/g,'')
+		 return receipt.replace(/"/g,'').replace(/,/g,'').replace('[','').replace(']','')
 
 	}
 }
