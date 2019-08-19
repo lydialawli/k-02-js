@@ -264,7 +264,7 @@ class Car {
 }
 ```
 
-## Factory
+### Factory
 - A class can be used as a sort of "factory" to generate new objects based on its structure.
 
 `let myCar = new Car('Ferrari')`
@@ -277,7 +277,7 @@ end up with
 }
 ```
 
-## Extend
+### Extend
 classes can generate other classes, using keyword **extend**
 ```
 class Bus extends Car {
@@ -294,8 +294,8 @@ class Bus extends Car {
 ie. if the parent class has 4 wheels, instead of repeating in the new class `this.brand=brand, this.wheels = 4...` those properties that are
 universal to all the childrens within the same class, don't need to be rewritten, only use `super` instead.
 
-## Methods
-A class can also have nested methods. Function inside a class is called **method**
+### Methods
+A class can also have nested methods. Function inside a class is called **method**. This is why is called **object-oriented programming**.
 ```
 class Car{
 	constructor{}
