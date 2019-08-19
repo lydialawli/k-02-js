@@ -95,7 +95,11 @@ let Receipt = class {
 			total += p.price
 		})
 		this.Total = total
-
+	}
+	logNicely(products){
+		return products.Receipt.map( e => {
+				return `|${e.name}  |  $${e.price.toFixed(2)}|`
+		})
 	}
 }
 
@@ -109,5 +113,6 @@ let getReceipt = (n, p, d) =>{
 
 let receipt = new Receipt(getReceipt(name, prices, discounts))
 receipt.calcTotal(receipt)
+let formatedReceipt = receipt.logNicely(receipt)
 
-console.log(receipt)
+console.log(formatedReceipt)

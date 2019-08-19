@@ -2,7 +2,7 @@ https://www.tutorialrepublic.com/javascript-reference/javascript-array-object.ph
 
 
 ## 3 ways to console.log strings
-```
+```javascript
 let name = 'Ly'
 let surname = 'Law'
 
@@ -15,7 +15,9 @@ or
 
 or
 
-`` console.log(`${name} ${surname}`) ``
+``` javascript
+console.log(`${name} ${surname}`)
+```
 
 
 ## how to keep " ' " a character
@@ -27,7 +29,7 @@ console.log(who)
 
 ## loops
 
-```
+```javascript
 let array = [1,3,5,7]
 array.forEach(n => {
 	console.log(n)
@@ -35,7 +37,7 @@ array.forEach(n => {
 ```
 does not return an array, just executes function on each n
 
-```
+```javascript
 array.map( n => {
 	return `$${n}`
 })
@@ -44,7 +46,7 @@ array.map( n => {
 
 ## filter
 Creates a new array with all elements that pass the test in a testing function.
-```
+```javascript
 let places = [
 {location:'Paris', price: 120},
 {location:'Samui',price: 120},
@@ -65,7 +67,7 @@ else {
 
 ## find
 Returns the value of the first element in an array that pass the test in a testing function.
-```
+```javascript
 let first120 = places.find (p=>{
 	return p.price = 120
 })
@@ -75,7 +77,7 @@ console.log(first120)
 
 ## reduce
 Reduce the values of an array to a single value (from left-to-right)
-```
+```javascript
 let numbers = [1,3,5,7]
 let sum = numbers.reduce((c,i)=>{
 	return c-i
@@ -87,7 +89,7 @@ console.log('sum: ',sum)
 ## shift
 (remove first character of array)
 
-```
+```javascript
 let array = [1,2,3]
 let newArray = array.shift()
 console.log(newArray)
@@ -96,7 +98,7 @@ console.log(newArray)
 
 ## toFixed
 
-```
+```javascript
 let price = 100.687
 console.log(price.toFixed(2)) //100.69
 ```
@@ -109,14 +111,14 @@ converts into string
 ## number
 converts into number
 
-```
+```javascript
 let price = '100'
 console.log(Number(price))
 //100
 ```
 
 ## Split
-```
+```javascript
 let greeting = 'Hello world'
 let splitted = greeting.split('')
 
@@ -130,7 +132,7 @@ console.log( greeting.split(' ') )
 ## join
 (to join elements from an array)
 
-```
+```javascript
 let join = splitted.join('')
 //Helloworld
 ```
@@ -142,7 +144,7 @@ let join = splitted.join('')
 ## sort
 Sorts the elements of an array.
 
-```
+```javascript
 let numbers = [1, 90, 2, 10, 11, 100, 5 ]
 console.log(numbers.sort)
 // [1, 10, 11, 100, 2, 5, 90]
@@ -154,7 +156,7 @@ console.log(numbers.sort( (a,b) => a - b))
 
 ## reverse
 Reverses the order of the elements in an array.
-```
+```javascript
 let fruits = ['a', 'b', 'c']
 console.log(fruits.reverse())
 ```
@@ -172,7 +174,7 @@ while (a>3){
 ## for in loop
 similar to forEach but for objects
 
-```
+```javascript
 let user = {
 	a: 1,
 	b: 2,
@@ -191,7 +193,7 @@ to shorten if statement
 https://guide.freecodecamp.org/c/ternary-operator/
 
 
-```
+```javascript
 if (a==1){
 	return 'a'
 }else{
@@ -223,13 +225,13 @@ ex. 1, 2, 0.615...
 
 **setTimeout(function,time(in ms))**
 ex.setting alarm clock...
-```
+```javascript
 let add = (a, b) => a + b
 
 setTimeout(add(),3000)
 ```
 
-```
+```javascript
 setTimeout(() => { console.log('Hello')}, 2 * 60 * 1000)
 ```
 
@@ -255,7 +257,7 @@ usually starts with uppercase.
 - first thing to add is **constructor**
 Properites within the class are defined through the parameters passed into the `constructor`, assigned to the instance of class `this.` (refers to the class itself)
 
-```
+```javascript
 class Car {
 	constructor(brand,color){
 		this.brand = brand
@@ -272,7 +274,7 @@ class Car {
 `let myCar = new Car('Ferrari', 'black')`
 
 end up with
-```
+```javascript
 {
 	brand: 'Ferrari',
 	wheels: 4
@@ -283,7 +285,7 @@ end up with
 
 ### Extend
 classes can generate other classes, using keyword **extend**
-```
+```javascript
 class Bus extends Car {
 	constructor(brand, seats){
 		super(brand)
@@ -299,7 +301,7 @@ ie. if the parent class has 4 wheels, instead of repeating in the new class `thi
 universal to all the childrens within the same class, don't need to be rewritten, only use `super` instead.
 
 another example:
-```
+```javascript
 let Truck = extends Car {
 	constructor(wheels, color){
 		super(wheels, color)
@@ -320,7 +322,7 @@ let myTruck = new Truck(12, 'red')
 
 ### Methods
 A class can also have nested methods. Function inside a class is called **method**. This is why is called **object-oriented programming**.
-```
+```javascript
 class Car{
 	constructor{}
 	paint(color){
@@ -342,7 +344,7 @@ Function that executes after another function has finished. Declared within a fu
 ## Promise
 It's a class. Inside there is a function. Taking 2 parameters.
 Result and reject.
-```
+```javascript
 new Promise((res, rej) => {
 	res('success')
 	rej('error')
@@ -351,7 +353,7 @@ new Promise((res, rej) => {
 ```
 
 ### Nesting
-```
+```javascript
 fryEggs().then(res => {
 		eatEggs().then(res =>{
 			brushTeeth().then(res =>{
@@ -364,7 +366,7 @@ fryEggs().then(res => {
 ### Promise.all()
 Use it when everything is ready.
 Syntax is:
-```
+```javascript
 let a = new Promise //...
 let b = new Promise //...
 
@@ -373,7 +375,7 @@ Promise.all([a, b]).then(responses => /*...*/).catch(/*...*/)
 - takes an **array of promises** as a parameter
 - returns all the promises at the same time as a new **array of results**
 
-```
+```javascript
 let cookBacon = (pan, num) => {
 	return new Promise((resolve,reject) => {
 			if (pan) {
