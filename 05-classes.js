@@ -115,8 +115,11 @@ let Receipt = class {
 		 prod.push('----------------------')
 		 prod.unshift('----------------------')
 		 prod.push(`| Total   ${' |'} $${products.Total.toFixed(2)} |`)
+		 prod.push('----------------------')
 
-		 return prod
+		 let receipt = JSON.stringify(prod, null, 2)
+		 return receipt.replace(/"/g,'').replace(/,/g,'')
+
 	}
 }
 
