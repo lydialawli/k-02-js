@@ -240,3 +240,69 @@ repeats a given function at every given time-interval.
 
 **clearInterval**
 to stop execution in setInterval()
+
+## Classes
+
+- JS class is a blueprint to manufacture objects. Technically a function.
+- **declared** with **class** keyword
+
+### Syntax
+- **Syntax** is like :
+`class Car {}`
+usually starts with uppercase.
+
+### Constructor
+- first thing to add is **constructor**
+Properites within the class are defined through the parameters passed into the `constructor`, assigned to the instance of class `this.` (refers to the class itself)
+
+```
+class Car {
+	constructor(brand){
+		this.brand = brand
+		this.wheels = 4
+	}
+}
+```
+
+## Factory
+- A class can be used as a sort of "factory" to generate new objects based on its structure.
+
+`let myCar = new Car('Ferrari')`
+
+end up with
+```
+{
+	brand: 'Ferrari',
+	wheels: 4
+}
+```
+
+## Extend
+classes can generate other classes, using keyword **extend**
+```
+class Bus extends Car {
+	constructor(brand, seats){
+		super(brand)
+		this.seats = seats
+	}
+}
+```
+
+`myBus = new Bus('Toyota', 10)`
+
+- **super** is shortcut to not repeat the properties of a parent class .
+ie. if the parent class has 4 wheels, instead of repeating in the new class `this.brand=brand, this.wheels = 4...` those properties that are
+universal to all the childrens within the same class, don't need to be rewritten, only use `super` instead.
+
+## Methods
+A class can also have nested methods. Function inside a class is called **method**
+```
+class Car{
+	constructor{}
+	paint(colot){
+		this.color = color
+	}
+}
+
+myCar.paint('blue')
+```
