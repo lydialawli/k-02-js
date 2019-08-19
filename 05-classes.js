@@ -66,18 +66,48 @@ let fight = (fighter) => {setInterval(()=> {
 		}
 	}, 1000)}
 
-fight(Ly)
+//fight(Ly)
 
 //020504
 
-// let names = ['apples', 'bananas', 'bread', 'cookies', 'broccoli', 'onions']
-// let prices = [20, 12, 24, 53, 32, 15]
-// let discounts = [0, 0, 10, 25, 0, 5]
-//
-// let Product = class{
-// 	constructor( name, price){
-// 		this.name = name
-// 		this.price = price
-// 	}
-// 	applyDiscount(discout){}
-// }
+let name = ['apples', 'bananas', 'bread', 'cookies', 'broccoli', 'onions']
+let prices = [20, 12, 24, 53, 32, 15]
+let discounts = [0, 0, 10, 25, 0, 5]
+
+let Product = class {
+	constructor( name, price){
+		this.name = name
+		this.price = price
+	}
+	applyDiscount(discount){
+		this.price = this.price - (this.price * discount/100)
+	}
+}
+
+let Receipt = class {
+	constructor(products){
+		this.Receipt = products
+		this.Total = 0
+	}
+	calcTotal(products){
+		let total = 0
+	 	products.Receipt.forEach( p => {
+			total += p.price
+		})
+		this.Total = total
+
+	}
+}
+
+let getReceipt = (n, p, d) =>{
+		return n.map( (e,i) => {
+			let product = new Product(e, p[i])
+			product.applyDiscount(d[i])
+			return product
+		})
+}
+
+let receipt = new Receipt(getReceipt(name, prices, discounts))
+receipt.calcTotal(receipt)
+
+console.log(receipt)
