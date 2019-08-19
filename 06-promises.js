@@ -63,6 +63,32 @@ let makeBacon = () => {
 	})
 }
 
-Promise.all([makeCoffee(), makeEggs(),makeToast(), makeBacon()])
-.then(res => console.log('Breakfast is ready: ',res))
+// Promise.all([makeCoffee(), makeEggs(),makeToast(), makeBacon()])
+// .then(res => console.log('Breakfast is ready: ',res))
+// .catch(err => console.log(err))
+
+//020603
+let horse1 = () => {
+	return new Promise((res, rej) => {
+		let random = Math.floor(Math.random() * Math.floor(4))
+		setTimeout(() => {res('Speedy')}, random*1000)
+	})
+}
+
+let horse2 = () => {
+	return new Promise((res, rej) => {
+		let random = Math.floor(Math.random() * Math.floor(4))
+		setTimeout(() => {res('Jackpot')}, random*1000)
+	})
+}
+
+let horse3 = () => {
+	return new Promise((res, rej) => {
+		let random = Math.floor(Math.random() * Math.floor(4))
+		setTimeout(() => {res('Red')}, random*1000)
+	})
+}
+
+Promise.race([horse1(), horse2(),horse3()])
+.then(res => console.log(`The winner is ${res}!`))
 .catch(err => console.log(err))
