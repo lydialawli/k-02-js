@@ -257,9 +257,11 @@ Properites within the class are defined through the parameters passed into the `
 
 ```
 class Car {
-	constructor(brand){
+	constructor(brand,color){
 		this.brand = brand
 		this.wheels = 4
+		this.color = color
+		radio = true
 	}
 }
 ```
@@ -267,13 +269,15 @@ class Car {
 ### Factory
 - A class can be used as a sort of "factory" to generate new objects based on its structure.
 
-`let myCar = new Car('Ferrari')`
+`let myCar = new Car('Ferrari', 'black')`
 
 end up with
 ```
 {
 	brand: 'Ferrari',
 	wheels: 4
+	color = 'black'
+	radio = true
 }
 ```
 
@@ -294,15 +298,100 @@ class Bus extends Car {
 ie. if the parent class has 4 wheels, instead of repeating in the new class `this.brand=brand, this.wheels = 4...` those properties that are
 universal to all the childrens within the same class, don't need to be rewritten, only use `super` instead.
 
+another example:
+```
+let Truck = extends Car {
+	constructor(wheels, color){
+		super(wheels, color)
+		this.honkPower = 90
+	}
+}
+
+let myTruck = new Truck(12, 'red')
+
+//{
+	brand: 'Ferrari',
+	wheels: 12,
+	color = 'black',
+	radio = true,
+	honkPower = 90
+}
+```
+
 ### Methods
 A class can also have nested methods. Function inside a class is called **method**. This is why is called **object-oriented programming**.
 ```
 class Car{
 	constructor{}
-	paint(colot){
+	paint(color){
 		this.color = color
 	}
 }
 
 myCar.paint('blue')
 ```
+
+## Callbacks
+Function that executes after another function has finished. Declared within a function.
+
+## Async
+
+**Sync** events that happen in sequence /at the same time
+**Async** events happening independently (out of sync)
+
+## Promise
+It's a class. Inside there is a function. Taking 2 parameters.
+Result and reject.
+```
+new Promise((res, rej) => {
+	res('success')
+	rej('error')
+	})
+
+```
+
+### Nesting
+```
+fryEggs().then(res => {
+		eatEggs().then(res =>{
+			brushTeeth().then(res =>{
+				//do whatever
+				}).catch(e =>console.log(e))
+			}).catch(e =>console.log(e))
+	}).catch(e =>console.log(e))
+```
+
+### Promise.all()
+Use it when everything is ready.
+Syntax is:
+```
+let a = new Promise //...
+let b = new Promise //...
+
+Promise.all([a, b]).then(responses => /*...*/).catch(/*...*/)
+```
+- takes an **array of promises** as a parameter
+- returns all the promises at the same time as a new **array of results**
+
+```
+let cookBacon = (pan, nume) => {
+	return new Promise((resolve,reject) => {
+			if (pan) {
+				setTimeout( () => {
+					resolve('Bacon is ready!')
+					}, num*1000)
+			} else{
+					reject('Please provide pan')
+				}
+	})
+}
+
+cookBacon( pan, 4 )
+.then(res => console.log(res))
+.catch(err => {console.log(err)})
+
+```
+
+### Promise.race()
+Similar to promise.all but instead of waiting all the promises to execute, it returns the answer of the first promise that finishes first.
+The rest stops executing.
